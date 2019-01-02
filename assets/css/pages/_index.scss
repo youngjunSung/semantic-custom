@@ -1,0 +1,201 @@
+.area {
+  margin: 1.5rem;
+}
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+.ui.button, .ui.dropdown, .ui.input {
+  border-radius: 0;
+}
+.ui.dropdown {
+  min-width: auto;
+  min-height: auto;
+}
+//버튼 - 시멘틱
+.ui.button {
+  margin: 0em 0.25em 0em 0em;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  border-radius: 0.28571429rem;
+}
+//드롭다운 - 시멘틱
+.ui.dropdown {
+  min-width: 14em;
+  min-height: 2.71428571em;
+  padding: 0.78571429em 2.1em 0.78571429em 1em;
+  border-radius: 0.28571429rem;
+  .dropdown.icon {
+    padding: 0.91666667em;
+  }
+  .menu {
+    .item {
+      border-top: 1px solid #FAFAFA;
+      padding: 0.78571429rem 1.14285714rem !important;
+    }
+  }
+}
+//드롭다운 - 커스텀
+.ui.dropdown.custom {
+  $dropdown-height: 3.5rem;
+  min-width: auto;
+  min-height: auto;
+  width: 12rem;
+  height: $dropdown-height;
+  padding: 0 0 0 1rem;
+  border-radius: 0;
+  .text {
+    vertical-align: middle;
+  }
+  &:after {
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .dropdown.icon {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 6px solid #303030;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }
+  }
+  .menu {
+    max-height: $dropdown-height*4;
+    .item {
+      padding: 0 0 0 1rem!important;
+      height: $dropdown-height;
+      line-height: $dropdown-height;
+    }
+  }
+}
+//입력폼
+.ui.input.custom {
+  input {
+    border-color: red;
+    border-radius: 0;
+    &::placeholder {
+      color: deepskyblue;
+      opacity: 1; /* Firefox */
+    }
+    &:-ms-input-placeholder {
+      color: deepskyblue; /* Internet Explorer 10-11 */
+    }
+    &::-ms-input-placeholder {
+      color: deepskyblue !important; /* Microsoft Edge */
+    }
+    &::-webkit-input-placeholder {
+      color: deepskyblue; /* Safari, Chrome */
+    }
+  }
+}
+//체크박스
+.ui.checkbox.chk-custom {
+  $chkbox-size: 4rem;
+  min-width: auto;
+  min-height: auto;
+  line-height: $chkbox-size;
+  //체크박스 색상
+  input {
+    width: $chkbox-size;
+    height: $chkbox-size;
+    &:focus ~ label:before {
+      // 체크해제 시 박스 테두리 색상 (포커스)
+      border-color: blue;
+    }
+    &:checked:focus ~ label:before {
+      // 체크 시 박스 테두리 색상 (포커스)
+      border-color: red;
+    }
+    &:checked ~ label:before {
+      // 체크 시 박스 테두리 색상
+      border-color: red;
+    }
+    &:checked ~ label:after {
+      // 체크 모양
+      content: '';
+      display: block;
+      width: $chkbox-size*.4;
+      height: $chkbox-size*.7;
+      border: solid #000;
+      border-width: 0 $chkbox-size*.15 $chkbox-size*.15 0;
+      transform: rotate(45deg);
+      left: $chkbox-size*.3;
+    }
+  }
+  label {
+    padding-left: $chkbox-size*1.4;
+    font-size: 1rem;
+    &:before {
+      width: $chkbox-size;
+      height: $chkbox-size;
+      border-radius: 0;
+      // 체크해제 시 박스 테두리 색상
+      border-color: blue;
+    }
+    &:after {
+      width: $chkbox-size;
+      height: $chkbox-size;
+    }
+  }
+}
+//라디오
+.ui.radio.checkbox.radio-custom {
+  $radio-size: 3rem;
+  min-width: auto;
+  min-height: auto;
+  line-height: $radio-size;
+  input {
+    width: $radio-size;
+    height: $radio-size;
+    &:focus ~ label:before {
+      // 체크해제 시 박스 테두리 색상 (포커스)
+      border-color: blue;
+    }
+    &:checked:focus ~ label:before {
+      // 체크 시 박스 테두리 색상 (포커스)
+      border-color: red;
+    }
+    &:checked ~ label:before {
+      // 체크 시 박스 테두리 색상
+      border-color: red;
+    }
+    &:checked ~ label:after {
+      // 체크 모양
+      content: '';
+    }
+  }
+  label {
+    padding-left: $radio-size*1.4;
+    font-size: 1rem;
+    &:before {
+      width: $radio-size;
+      height: $radio-size;
+      // 체크해제 시 박스 테두리 색상
+      border-color: blue;
+    }
+    &:after {
+      width: $radio-size;
+      height: $radio-size;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <script src="assets/js/vender/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vender/semantic.2.2.11.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+<!--텍스트 관련 태그-->
+<p>A button can be formatted to show different levels of emphasis</p>
+<h1>A button can be formatted to show different levels of emphasis</h1>
+<h2 tabindex="1">A button can be formatted to show different levels of emphasis</h2>
+<h3>A button can be formatted to show different levels of emphasis</h3>
+<h4>A button can be formatted to show different levels of emphasis</h4>
+<h5>A button can be formatted to show different levels of emphasis</h5>
+<h6>A button can be formatted to show different levels of emphasis</h6>
+<!--버튼-->
+<div class="area">
+  <button class="ui secondary button">
+    Okay
+  </button>
+  <button class="ui button">
+    Cancel
+  </button>
+  <button class="ui primary button">
+    Save
+  </button>
+  <button class="ui button">
+    Discard
+  </button>
+</div>
+<!--드롭다운-->
+<div class="area">
+  <select class="ui dropdown">
+    <option value="">Gender</option>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
+</div>
+<div class="area">
+  <select class="ui dropdown custom">
+    <option value="">Gender</option>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
+  <script>
+      $('.ui.dropdown').dropdown();
+  </script>
+</div>
+<!--입력폼-->
+<div class="area">
+  <div class="ui input">
+    <input type="text" placeholder="Search...">
+  </div>
+</div>
+<div class="area">
+  <div class="ui input custom">
+    <input type="text" placeholder="Search...">
+  </div>
+</div>
+<!--체크박스-->
+<div class="area">
+  <div class="ui checkbox">
+    <input type="checkbox" name="example" id="chk">
+    <label for="chk">Make my profile visible</label>
+  </div>
+</div>
+<div class="area">
+  <div class="ui checkbox chk-custom">
+    <input type="checkbox" name="example" id="chk2">
+    <label for="chk2">Make my profile visible</label>
+  </div>
+</div>
+<!--라디오-->
+<div class="area">
+  <div class="field">
+    <div class="ui radio checkbox">
+      <input type="radio" name="radio" id="radio">
+      <label for="radio">Radio choice</label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="ui radio checkbox">
+      <input type="radio" name="radio" id="radio2">
+      <label for="radio2">Radio choice</label>
+    </div>
+  </div>
+</div>
+<div class="area">
+  <div class="field">
+    <div class="ui radio checkbox radio-custom">
+      <input type="radio" name="radio2" id="radio3">
+      <label for="radio3">Radio choice</label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="ui radio checkbox radio-custom">
+      <input type="radio" name="radio2" id="radio4">
+      <label for="radio4">Radio choice</label>
+    </div>
+  </div>
+</div>
+
+<div id="foo">123</div>
+<div id="bar">456</div>
+<div id="aaa">789</div>
+<script>
+    //           이벤트    이벤트핸들러
+    $('#foo').on('custom', function (event, param1, param2) {
+        //                 이벤트 핸들러의 첫번째 매개변수는 이벤트 객체를 전달받는다.
+        alert(param1 + "\n" + param2);
+    });
+    $('#bar').on('click', function () {
+        $('#foo').trigger('custom', ['Custom','Event']);
+        // #foo 요소에 등록된 이벤트 핸들러만 실행
+    });
+
+    //함수의 매개변수는 값 그대로 반환
+    function bbb(a, b) {
+        console.log(a * b)
+    }
+    $('#aaa').click(function () {
+        bbb(3, 5);
+    });
+
+    //이벤트 하나
+    $('.main-nav ul > li').on('click', function(){
+
+    });
+    //이벤트 둘
+    $('.main-nav ul > li').on('click mouseover', function(){
+
+    });
+    //이벤트 넷
+    $('.main-nav ul > li').on({
+        'focusin mouseover': function () {},
+        'focusout mouseleave': function () {}
+    });
+</script>
+</body>
+</html>
