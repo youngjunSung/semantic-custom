@@ -62,6 +62,7 @@ h5 {
   .dropdown.icon {
     padding: 0;
     margin: 0;
+    width: 20px;
     height: 100%;
     top: 0;
     right: 0;
@@ -81,6 +82,9 @@ h5 {
   }
   .menu {
     max-height: $dropdown-height*4;
+    //.ui.dropdown 보더 굵어진 만큼(.2rem) 추가
+    //margin: 0px -.2rem; x1
+    //width: calc(100% + .4rem ); x2
     .item {
       padding: 0 0 0 1rem!important;
       height: $dropdown-height;
@@ -134,9 +138,11 @@ h5 {
       // 체크 모양
       content: '';
       display: block;
+      // 체크 모양 길이
       width: $chkbox-size*.4;
       height: $chkbox-size*.7;
       border: solid #000;
+      // 체크 모양 굵기
       border-width: 0 $chkbox-size*.15 $chkbox-size*.15 0;
       transform: rotate(45deg);
       left: $chkbox-size*.3;
