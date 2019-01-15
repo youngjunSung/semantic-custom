@@ -152,11 +152,13 @@ h5 {
     padding-left: $chkbox-size*1.4;
     font-size: 1rem;
     &:before {
+      // 체크 전 박스 테두리 모양
       width: $chkbox-size;
       height: $chkbox-size;
       border-radius: 0;
-      // 체크해제 시 박스 테두리 색상
       border-color: blue;
+      // 테두리 굵기
+      //border-width: .1rem;
     }
     &:after {
       width: $chkbox-size;
@@ -194,6 +196,7 @@ h5 {
     padding-left: $radio-size*1.4;
     font-size: 1rem;
     &:before {
+      // 바깥 원 크기
       width: $radio-size;
       height: $radio-size;
       // 체크해제 시 박스 테두리 색상
@@ -202,6 +205,12 @@ h5 {
     &:after {
       width: $radio-size;
       height: $radio-size;
+      // 가운데 원 크기
+      //-webkit-transform: scale(0.6);
+      //-moz-transform: scale(0.6);
+      //-ms-transform: scale(0.6);
+      //-o-transform: scale(0.6);
+      //transform: scale(0.6);
     }
   }
 }
